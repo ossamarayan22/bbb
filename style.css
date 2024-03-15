@@ -205,6 +205,17 @@ body {
 }
 
 @media (max-width: 904px) {
+
+    .nav_menu.active {
+        visibility: visible;
+        clip-path: circle(150% at 100% 100%);
+        transition: all 0.7s ease-in-out;
+    }
+    .nav_list {
+        display: block;
+        text-align: center;
+        margin: 2.5rem 0;
+    }
     .hero-img {
         width: 100%;
     }
@@ -217,6 +228,23 @@ body {
     .hero-img {
         grid-row: 1;
         max-width: 30rem;
+    }
+}
+@media (max-width: 430px) {
+
+    .nav_menu.active {
+        visibility: visible;
+        clip-path: circle(150% at 100% 100%);
+        transition: all 0.7s ease-in-out;
+        font-size: 20px;
+    }
+    .nav_list {
+        display: block;
+        text-align: center;
+        margin: 3rem 0;
+    }
+    .hero-img {
+        width: 100%;
     }
 }
 
