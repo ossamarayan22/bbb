@@ -1,4 +1,4 @@
-var form = document.getElementById("myForm1"),
+var form = document.getElementById("myForm"),
     imgInput = document.querySelector(".img"),
     file = document.getElementById("imgInput"),
     userName = document.getElementById("name"),
@@ -16,13 +16,12 @@ var form = document.getElementById("myForm1"),
     newUserBtn = document.querySelector(".newUser")
 
 
-let user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : [];
-
+let user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : []
 
 let isEdit = false, editId
-showInfo()
+showInfo1()
 
-newUserBtn.addEventListener('click', ()=> {
+newUserBtn.addEventListener('click', ()=>{
     submitBtn.innerText = 'Submit',
     modalTitle.innerText = "Fill the Form"
     isEdit = false
@@ -47,7 +46,7 @@ file.onchange = function(){
 }
 
 
-function showInfo(){
+function showInfo1(){
     document.querySelectorAll('.employeeDetails').forEach(info => info.remove())
     user.forEach((element, index) => {
         let createElement = `
@@ -79,7 +78,7 @@ function showInfo(){
     })
     
 }
-showInfo()
+showInfo1()
 
 
 
@@ -116,7 +115,7 @@ function deleteInfo(index){
     if(confirm("Are you sure want to delete?")){
         user.splice(index, 1)
         localStorage.setItem("user", JSON.stringify(user))
-        showInfo()
+        showInfo1()
     }
 }
 
@@ -147,7 +146,7 @@ form.addEventListener('submit', (e)=> {
     submitBtn.innerText = "Submit"
     modalTitle.innerHTML = "Fill The Form"
 
-    showInfo()
+    showInfo1()
 
     form.reset()
 
